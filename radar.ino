@@ -1,5 +1,4 @@
 #include <Servo.h>
-// #include <NewPing.h>
 
 const int VELOCITAT_COMUNICACIO_SERIAL = 9600;
 
@@ -10,8 +9,6 @@ const int PIN_SERVO = 11;
 const int ULTRASONIC_TRIG = 8;
 const int ULTRASONIC_ECHO = 9;
 const int DISTANCIA_ULTRASONICA_MAXIMA = 200;
-
-// NewPing sonar(ULTRASONIC_TRIG, ULTRASONIC_ECHO, DISTANCIA_ULTRASONICA_MAXIMA);
 
 const int POSICIO_SERVO_DEFAULT = 90;
 
@@ -70,13 +67,6 @@ void iniciarServo() {
 }
 
 void calculDades() {
-  
-  /*
-   * Codi alternatiu amb la llibreria NewPing
-   * 
-   * float distance = sonar.ping_cm();
-   */
-  
   long temps;
   long distancia;
 
