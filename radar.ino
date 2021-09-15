@@ -8,7 +8,6 @@ const int PIN_SERVO = 11;
 
 const int ULTRASONIC_TRIG = 8;
 const int ULTRASONIC_ECHO = 9;
-const int DISTANCIA_ULTRASONICA_MAXIMA = 200;
 
 const int POSICIO_SERVO_DEFAULT = 90;
 
