@@ -59,7 +59,7 @@ void iniciarServo() {
   pinMode(PIN_SERVO, OUTPUT);
   digitalWrite(PIN_SERVO, LOW);
   servo.attach(PIN_SERVO);
-  servo.write(POSICIO_SERVO_DEFAULT);
+  rotarAngle(POSICIO_SERVO_DEFAULT);
 }
 
 void iniciarSensor() {
