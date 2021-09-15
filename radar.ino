@@ -19,13 +19,9 @@ int direccioServo = -5; // ESQUERRA
 
 void setup() {
   iniciarServo();
+  iniciarSensor();
+  iniciarExtraVCC();
   Serial.begin(VELOCITAT_COMUNICACIO_SERIAL);
-  pinMode(ULTRASONIC_TRIG, OUTPUT);
-  pinMode(ULTRASONIC_ECHO, INPUT);
-  digitalWrite(ULTRASONIC_TRIG, LOW);
-
-  pinMode(EXTRA_VCC, OUTPUT);
-  digitalWrite(EXTRA_VCC, HIGH);
 }
 
 void loop() {
@@ -64,6 +60,17 @@ void iniciarServo() {
   digitalWrite(PIN_SERVO, LOW);
   servo.attach(PIN_SERVO);
   servo.write(POSICIO_SERVO_DEFAULT);
+}
+
+void iniciarSensor() {
+  pinMode(ULTRASONIC_TRIG, OUTPUT);
+  pinMode(ULTRASONIC_ECHO, INPUT);
+  digitalWrite(ULTRASONIC_TRIG, LOW);
+}
+
+void iniciarExtraVCC() {
+  pinMode(EXTRA_VCC, OUTPUT);
+  digitalWrite(EXTRA_VCC, HIGH);
 }
 
 void calculDades() {
