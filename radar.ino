@@ -81,7 +81,7 @@ void calculDades() {
   digitalWrite(ULTRASONIC_TRIG, LOW);
   
   temps = pulseIn(ULTRASONIC_ECHO, HIGH);
-  distancia = temps/59;
+  distancia = temps*0.017;
   
   imprimirDades(posicioServo, distancia);
 }
