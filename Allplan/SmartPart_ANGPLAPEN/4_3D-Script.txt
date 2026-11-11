@@ -1,0 +1,40 @@
+! =====================================================================
+!  ANGPLAPEN - 3D-Script
+!  Origen en el talón inferior del ala vertical.
+!  X = longitud, Y = ala horizontal (superior), Z = altura.
+!  Ala horizontal arriba, ala vertical colgando (z = 0 .. B).
+! =====================================================================
+
+GROUP "cos"
+    ! Ala vertical (colgante)
+    BLOCK L, t, B - t
+    ! Ala horizontal (superior)
+    ADDZ B - t
+    BLOCK L, A, t
+    DEL 1
+ENDGROUP
+
+GROUP "forats"
+    FOR i = 1 TO n
+        IF n = 1 THEN
+            xi = L / 2
+        ELSE
+            xi = e + (i - 1) * (L - 2 * e) / (n - 1)
+        ENDIF
+
+        ! Agujero ala horizontal (eje Z) a g del talón
+        ADD xi, g, B - t - eps
+        CYLIND t + 2 * eps, d / 2
+        DEL 1
+
+        ! Agujero ala vertical (eje Y) a g del talón
+        ADD xi, -eps, B - g
+        ROTX -90
+        CYLIND t + 2 * eps, d / 2
+        DEL 2
+    NEXT i
+ENDGROUP
+
+PLACEGROUP SUBGROUP("cos", "forats")
+KILLGROUP "cos"
+KILLGROUP "forats"

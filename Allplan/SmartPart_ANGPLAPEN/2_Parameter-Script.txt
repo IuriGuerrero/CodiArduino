@@ -1,0 +1,30 @@
+! =====================================================================
+!  ANGPLAPEN - Parameter-Script
+! =====================================================================
+
+! --- Selectores -------------------------------------------------------
+VALUES "muntatge" "OBRA", "FABRICA"
+VALUES "material" "S235", "S275", "S355", CUSTOM
+VALUES "rf"       "R 0", "R 30", "R 60", "R 90", "R 120", "R 180"
+
+! --- Límites geométricos ---------------------------------------------
+VALUES "n" RANGE [1, ]
+VALUES "t" RANGE (0, ]
+IF t >= A OR t >= B THEN PARAMETERS t = MIN(A, B) / 10
+
+! --- Campos no editables ---------------------------------------------
+LOCK "d", "nforats", "pes"
+
+! --- Valores calculados ----------------------------------------------
+PARAMETERS nforats = nforats_c
+PARAMETERS pes     = pes_c
+
+! --- Atributos Allplan (cambiar nnnX por los números reales) ---------
+PARAMETERS @nnn1@ = "FG01_002_012"     ! pmp_CARTICULO
+PARAMETERS @nnn2@ = "ANGPLAPEN"        ! DEN
+PARAMETERS @nnn3@ = nforats_c          ! PMP_FG_ANG_FORATS
+PARAMETERS @nnn4@ = pes_c              ! Pes
+PARAMETERS @nnn5@ = d                  ! PMP_FG_ANG_FORAT_DIAM
+PARAMETERS @nnn6@ = muntatge           ! PMP_FG_ANG_MUNTATGE
+PARAMETERS @nnn7@ = material           ! PMP_MATERIAL
+PARAMETERS @nnn8@ = rf                 ! PMP_RESISTENCIA_FOC

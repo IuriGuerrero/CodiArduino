@@ -1,0 +1,39 @@
+! =====================================================================
+!  ANGPLAPEN - Dialog-Script (UI)
+! =====================================================================
+UI_DIALOG "Angular ANGPLAPEN"
+
+UI_PAGE 1
+  UI_GROUPBOX "Geometría", 5, 5, 290, 125
+    UI_OUTFIELD "Longitud L",            15,  25, 140, 18
+    UI_INFIELD  "L",                    160,  23, 120, 20
+    UI_OUTFIELD "Ala horizontal A",      15,  50, 140, 18
+    UI_INFIELD  "A",                    160,  48, 120, 20
+    UI_OUTFIELD "Ala vertical B",        15,  75, 140, 18
+    UI_INFIELD  "B",                    160,  73, 120, 20
+    UI_OUTFIELD "Espesor t",             15, 100, 140, 18
+    UI_INFIELD  "t",                    160,  98, 120, 20
+
+  UI_GROUPBOX "Agujeros", 5, 135, 290, 125
+    UI_OUTFIELD "Nº agujeros por ala",   15, 155, 140, 18
+    UI_INFIELD  "n",                    160, 153, 120, 20
+    UI_OUTFIELD "Distancia extremo e",   15, 180, 140, 18
+    UI_INFIELD  "e",                    160, 178, 120, 20
+    UI_OUTFIELD "Gramil g",              15, 205, 140, 18
+    UI_INFIELD  "g",                    160, 203, 120, 20
+    UI_OUTFIELD "Diámetro (fijo)",       15, 230, 140, 18
+    UI_INFIELD  "d",                    160, 228, 120, 20   ! bloqueado con LOCK
+
+UI_PAGE 2
+  UI_GROUPBOX "Atributos", 5, 5, 290, 175
+    UI_OUTFIELD "Montaje",               15,  25, 140, 18
+    UI_INFIELD  "muntatge",             160,  23, 120, 20
+    UI_OUTFIELD "Material",              15,  50, 140, 18
+    UI_INFIELD  "material",             160,  48, 120, 20
+    UI_OUTFIELD "Resistencia fuego",     15,  75, 140, 18
+    UI_INFIELD  "rf",                   160,  73, 120, 20
+    UI_OUTFIELD "Nº agujeros",           15, 100, 140, 18
+    UI_INFIELD  "nforats",              160,  98, 120, 20   ! bloqueado
+    UI_OUTFIELD "Peso (kg)",             15, 125, 140, 18
+    UI_INFIELD  "pes",                  160, 123, 120, 20   ! bloqueado
+    UI_OUTFIELD "Art. FG01_002_012 · ANGPLAPEN", 15, 150, 265, 18

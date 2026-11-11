@@ -1,0 +1,14 @@
+! =====================================================================
+!  ANGPLAPEN - Master-Script
+!  Valores derivados disponibles para el resto de scripts
+! =====================================================================
+dens = 7850          ! densidad acero kg/m3
+u    = 0.001         ! factor longitud -> m  (mm -> m)
+eps  = t * 0.1       ! sobrelongitud de los cilindros de taladro
+
+nforats_c = 2 * n    ! agujeros en ala horizontal + ala vertical
+
+! Peso (sección en L menos agujeros)
+area  = A * t + (B - t) * t
+vol   = area * L - nforats_c * PI * (d / 2)^2 * t
+pes_c = INT(vol * u * u * u * dens * 100 + 0.5) / 100
